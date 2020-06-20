@@ -98,21 +98,12 @@ class _MapState extends State<Map> {
     );
   }
 
-  var tmpSeriesData = r'''[
-    {
-      'name': '河南',
-      'value': 60.0
-    },
-    {
-      'name': '西藏',
-      'value': 30,
-    }
-  ]''';
+  var tmpSeriesData;
 
 
   @override
   void initState() {
-//    getData();
+    getData();
     super.initState();
   }
 
@@ -131,13 +122,10 @@ class _MapState extends State<Map> {
            'color': '#FFF'
          },
        };
-       print(item['value']);
        return item;
     }).toList();
-    tmpSeriesData = r'''listData''';
+    tmpSeriesData = jsonEncode(listData);
     setState(() {});
-
-   print(tmpSeriesData);
   }
 
 }
